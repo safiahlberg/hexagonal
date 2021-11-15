@@ -4,60 +4,30 @@
 	<modelVersion>4.0.0</modelVersion>
   <packaging>pom</packaging>
 	<modules>
-		<module>core</module>
-		<module>api/rest</module>
-		<module>api/soap</module>
-		<module>persistence/jdbc</module>
-		<module>persistence/hibernate</module>
+		<module>domain</module>
+		<module>application/adapters/output/persistence/jdbc</module>
+		<module>application/adapters/output/persistence/hibernate</module>
+		<module>application/adapters/output/persistence/mongodb</module>
 	</modules>
 
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.5.5</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
 	<groupId>com.wixia</groupId>
-	<artifactId>hexagonal</artifactId>
+	<artifactId>hexagonal-parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>hexagonal</name>
+	<name>hexagonal-parent</name>
 	<description>Demo project for Spring Boot with Hexagonal architecture</description>
-	<properties>
-		<java.version>11</java.version>
-	</properties>
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
 
+	<properties>
+		<maven.compiler.release>11</maven.compiler.release>
+		<java.version>11</java.version> <!-- Overrides the version of Spring Boot Starter -->
+	</properties>
+
+	<dependencies>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+			<version>1.18.22</version>
 			<optional>true</optional>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
 	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 
 </project>
