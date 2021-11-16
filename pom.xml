@@ -5,9 +5,7 @@
   <packaging>pom</packaging>
 	<modules>
 		<module>domain</module>
-		<module>application/adapters/output/persistence/jdbc</module>
-		<module>application/adapters/output/persistence/hibernate</module>
-		<module>application/adapters/output/persistence/mongodb</module>
+		<module>application</module>
 	</modules>
 
 	<groupId>com.wixia</groupId>
@@ -17,7 +15,11 @@
 	<description>Demo project for Spring Boot with Hexagonal architecture</description>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven.compiler.release>11</maven.compiler.release>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
 		<java.version>11</java.version> <!-- Overrides the version of Spring Boot Starter -->
 	</properties>
 
