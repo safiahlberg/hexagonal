@@ -1,9 +1,8 @@
 package com.wixia.hexagonal.core.vet;
 
-import lombok.Builder;
-import lombok.Data;
+import org.immutables.value.Value;
 
-@Builder
-public @Data class Specialty {
-    private String name;
+@Value.Immutable
+public interface Specialty {
+    String name();
 }

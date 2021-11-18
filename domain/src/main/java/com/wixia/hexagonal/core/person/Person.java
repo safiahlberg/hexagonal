@@ -1,8 +1,9 @@
 package com.wixia.hexagonal.core.person;
 
-import lombok.Data;
+import org.immutables.value.Value;
 
-public @Data class Person {
-    private String firstName;
-    private String lastName;
+@Value.Immutable
+public interface Person {
+    String firstName();
+    String lastName();
 }

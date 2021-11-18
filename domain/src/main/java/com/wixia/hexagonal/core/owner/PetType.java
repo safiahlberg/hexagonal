@@ -1,9 +1,8 @@
 package com.wixia.hexagonal.core.owner;
 
-import lombok.Builder;
-import lombok.Data;
+import org.immutables.value.Value;
 
-@Builder
-public @Data class PetType {
-    private String name;
+@Value.Immutable
+public interface PetType {
+    String name();
 }
