@@ -4,11 +4,13 @@ import com.wixia.hexagonal.core.visit.Visit;
 import org.immutables.value.Value;
 
 import java.time.LocalDate;
+import java.util.Optional;
 import java.util.Set;
 
 @Value.Immutable
 public interface Pet {
-    LocalDate birthDate();
+    String name();
+    Optional<LocalDate> birthDate();
     PetType type();
     Owner owner();
 
