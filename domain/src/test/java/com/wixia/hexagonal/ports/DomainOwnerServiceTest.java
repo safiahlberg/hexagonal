@@ -2,10 +2,13 @@ package com.wixia.hexagonal.ports;
 
 import com.wixia.hexagonal.core.owner.*;
 import com.wixia.hexagonal.core.person.ImmutablePersonId;
+import com.wixia.hexagonal.core.person.PersonId;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
@@ -37,6 +40,7 @@ class DomainOwnerServiceTest {
                 .build();
 
         when(ownerRepository.findByPersonId(expectedOwner.id())).thenReturn(Optional.of(expectedOwner));
+
         final Owner actualOwner = tested.addPet(expectedOwner.id(), pet);
 
         verify(ownerRepository).findByPersonId(expectedOwner.id());
@@ -47,5 +51,29 @@ class DomainOwnerServiceTest {
 
     @Test
     void removePet() {
+
+        final PersonId personId = ImmutablePersonId.builder().value("123456789").build();
+        final Owner expectedOwner = mock(Owner.class);
+        final Pet pet = ImmutablePet.builder()
+                .owner(expectedOwner)
+                .name("Fido")
+                .type(ImmutablePetType.builder().name("Dog").build())
+                .build();
+        final Set<Pet> pets = new HashSet<>();
+        pets.add(pet);
+
+        when(ownerRepository.findByPersonId(personId)).thenReturn(Optional.of(expectedOwner));
+        when(expectedOwner.id()).thenReturn(personId);
+        when(expectedOwner.firstName()).thenReturn("John");
+        when(expectedOwner.lastName()).thenReturn("Doe");
+        when(expectedOwner.pets()).thenReturn(pets);
+
+        assertThat(expectedOwner.pets()).extracting(Pet::name).contains("Fido");
+
+        final Owner actualOwner = tested.removePet(personId, pet);
+
+        verify(ownerRepository).save(actualOwner);
+
+        assertThat(actualOwner.pets()).extracting(Pet::name).doesNotContain("Fido");
     }
 }
