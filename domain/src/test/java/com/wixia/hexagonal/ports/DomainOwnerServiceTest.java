@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -41,7 +42,7 @@ class DomainOwnerServiceTest {
         verify(ownerRepository).findByPersonId(expectedOwner.id());
         verify(ownerRepository).save(actualOwner);
 
-        assert(actualOwner.pets()).contains(pet);
+        assertThat(actualOwner.pets()).extracting(Pet::name).contains("Fido");
     }
 
     @Test
