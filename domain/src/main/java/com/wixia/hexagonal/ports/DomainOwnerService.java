@@ -5,6 +5,7 @@ import com.wixia.hexagonal.core.owner.Owner;
 import com.wixia.hexagonal.core.owner.Pet;
 import com.wixia.hexagonal.core.person.PersonId;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class DomainOwnerService implements OwnerService {
@@ -16,23 +17,25 @@ public class DomainOwnerService implements OwnerService {
     }
 
     @Override
-    public Owner addPet(PersonId ownerId, Pet pet) {
+    public void addPet(PersonId ownerId, Pet pet) {
         Owner owner = getOwner(ownerId);
-        owner = ImmutableOwner.builder().from(owner).addPets(pet).build();
+        owner = ImmutableOwner.copyOf(owner).withPets(pet); // ImmutableOwner.builder().from(owner).addPets(pet).build();
 
         ownerRepository.save(owner);
-        return owner;
     }
 
     @Override
-    public Owner removePet(PersonId ownerId, Pet pet) {
+    public void removePet(PersonId ownerId, Pet pet) {
         Owner owner = getOwner(ownerId);
-        Set<Pet> pets = owner.pets();
+
+        // We need to copy the set to avoid UnsupportedOperationException.
+        // This also illustrates the immutability of Owner and its attributes.
+        Set<Pet> pets = new HashSet<>(owner.pets());
         pets.remove(pet);
-        owner = ImmutableOwner.builder().from(owner).pets(pets).build();
+
+        owner = ImmutableOwner.copyOf(owner).withPets(pets); // ImmutableOwner.builder().from(owner).pets(pets).build();
 
         ownerRepository.save(owner);
-        return owner;
     }
 
     private Owner getOwner(PersonId ownerId) {
