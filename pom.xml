@@ -62,6 +62,14 @@
 				<artifactId>maven-failsafe-plugin</artifactId>
 				<version>2.22.2</version>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+				<configuration>
+					<compilerArguments><Xmaxerrs>1000000</Xmaxerrs></compilerArguments>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 </project>

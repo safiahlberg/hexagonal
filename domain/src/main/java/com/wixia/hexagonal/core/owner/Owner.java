@@ -9,15 +9,35 @@ import java.util.Set;
 
 @Value.Style(visibility = Value.Style.ImplementationVisibility.PACKAGE)
 @Value.Immutable
-public abstract class Owner extends Person {
-    @Value.Parameter public abstract Optional<String> address();
-    @Value.Parameter public abstract Optional<String> city();
-    @Value.Parameter public abstract Optional<String> telephone();
+public abstract class Owner implements Person {
+    @Value.Parameter
+    public abstract Optional<String> address();
 
-    @Value.Parameter public abstract Set<Pet> pets();
+    @Value.Parameter
+    public abstract Optional<String> city();
 
-    public static Owner of(String name, String address, String city, String telephone, Set<Pet> pets) {
-        return ImmutableOwner.of(name, address, city, telephone, pets);
+    @Value.Parameter
+    public abstract Optional<String> telephone();
+
+    @Value.Parameter
+    public abstract Set<Pet> pets();
+
+    public static Owner of(String firstName,
+                           String lastName,
+                           PersonId id,
+                           String name,
+                           String address,
+                           String city,
+                           String telephone,
+                           Set<Pet> pets) {
+        return ImmutableOwner.of(firstName,
+                lastName,
+                id,
+                name,
+                address,
+                city,
+                telephone,
+                pets);
     }
 
     public static Builder builder() {
@@ -25,12 +45,10 @@ public abstract class Owner extends Person {
     }
 
     public interface Builder extends Person.Builder {
-        Builder firstName(String firstName);
-        Builder lastName(String lastName);
-        Builder id(PersonId id);
-
         Builder address(String address);
+
         Builder city(String city);
+
         Builder telephone(String telephone);
 
         Builder pets(Set<Pet> pets);
