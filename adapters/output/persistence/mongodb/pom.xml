@@ -6,11 +6,23 @@
     <artifactId>hexagonal-parent</artifactId>
     <groupId>com.wixia</groupId>
     <version>0.0.1-SNAPSHOT</version>
-    <relativePath>../../../../../pom.xml</relativePath>
+    <relativePath>../../../../pom.xml</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>hibernate</artifactId>
+  <artifactId>mongodb</artifactId>
 
+  <dependencies>
+    <dependency>
+      <groupId>com.wixia</groupId>
+      <artifactId>domain</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
 
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-mongodb</artifactId>
+      <version>3.2.6</version>
+    </dependency>
+  </dependencies>
 </project>

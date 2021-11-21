@@ -11,6 +11,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot</artifactId>
+            <version>2.5.6</version>
+        </dependency>
+    </dependencies>
     <artifactId>domain</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 

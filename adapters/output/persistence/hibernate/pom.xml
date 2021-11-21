@@ -3,20 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
-    <artifactId>application</artifactId>
+    <artifactId>hexagonal-parent</artifactId>
     <groupId>com.wixia</groupId>
     <version>0.0.1-SNAPSHOT</version>
     <relativePath>../../../../pom.xml</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>mongodb</artifactId>
+  <artifactId>hibernate</artifactId>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.springframework.data</groupId>
-      <artifactId>spring-data-mongodb</artifactId>
-      <version>3.2.6</version>
-    </dependency>
-  </dependencies>
+
 </project>
