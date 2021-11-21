@@ -1,6 +1,5 @@
 package com.wixia.hexagonal.ports;
 
-import com.wixia.hexagonal.core.owner.ImmutableOwner;
 import com.wixia.hexagonal.core.owner.Owner;
 import com.wixia.hexagonal.core.owner.Pet;
 import com.wixia.hexagonal.core.person.PersonId;
@@ -19,7 +18,7 @@ public class DomainOwnerService implements OwnerService {
     @Override
     public void addPet(PersonId ownerId, Pet pet) {
         Owner owner = getOwner(ownerId);
-        owner = ImmutableOwner.copyOf(owner).withPets(pet); // ImmutableOwner.builder().from(owner).addPets(pet).build();
+        owner = Owner.builder().from(owner).addPet(pet).build();
 
         ownerRepository.save(owner);
     }
@@ -33,7 +32,7 @@ public class DomainOwnerService implements OwnerService {
         Set<Pet> pets = new HashSet<>(owner.pets());
         pets.remove(pet);
 
-        owner = ImmutableOwner.copyOf(owner).withPets(pets); // ImmutableOwner.builder().from(owner).pets(pets).build();
+        owner = Owner.builder().from(owner).pets(pets).build();
 
         ownerRepository.save(owner);
     }

@@ -1,7 +1,6 @@
 package com.wixia.hexagonal.ports;
 
 import com.wixia.hexagonal.core.owner.*;
-import com.wixia.hexagonal.core.person.ImmutablePersonId;
 import com.wixia.hexagonal.core.person.PersonId;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -30,7 +29,7 @@ class DomainOwnerServiceTest {
     @Test
     void addPet() {
 
-        final PersonId personId = ImmutablePersonId.builder().value("123456789").build();
+        final PersonId personId = PersonId.builder().value("123456789").build();
         final Owner expectedOwner = ImmutableOwner.builder()
                 .id(personId)
                 .firstName("John")
@@ -61,7 +60,7 @@ class DomainOwnerServiceTest {
     @Test
     void removePet() {
 
-        final PersonId personId = ImmutablePersonId.builder().value("123456789").build();
+        final PersonId personId = PersonId.builder().value("123456789").build();
         Owner expectedOwner = ImmutableOwner.builder()
                 .id(personId)
                 .firstName("John")
