@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface SpringDataMongoOwnerRepository extends MongoRepository<Owner, PersonId> {
-    Optional<Owner> findByPersonId(PersonId personId);
+    Optional<Owner> findById(PersonId personId);
 }

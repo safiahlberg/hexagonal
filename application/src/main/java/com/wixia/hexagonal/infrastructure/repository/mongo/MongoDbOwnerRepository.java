@@ -25,7 +25,7 @@ public class MongoDbOwnerRepository implements OwnerRepository {
 
     @Override
     public Optional<Owner> findByPersonId(PersonId personId) {
-        return ownerRepository.findByPersonId(personId);
+        return ownerRepository.findById(personId); // NOTE! The translation between domain method and Spring repository method.
     }
 
     @Override
