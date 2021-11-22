@@ -1,7 +1,8 @@
-package com.wixia.hexagonal;
+package com.wixia.hexagonal.application.rest;
 
+import com.wixia.hexagonal.application.request.CreateOwnerRequest;
 import com.wixia.hexagonal.core.owner.Owner;
-import com.wixia.hexagonal.ports.OwnerService;
+import com.wixia.hexagonal.service.OwnerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

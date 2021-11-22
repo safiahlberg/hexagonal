@@ -13,8 +13,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>domain</module>
-        <module>adapters/input/rest</module>
-        <module>adapters/output/persistence/mongodb</module>
         <module>application</module>
     </modules>
 

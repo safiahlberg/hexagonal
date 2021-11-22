@@ -1,4 +1,4 @@
-package com.wixia.hexagonal.ports;
+package com.wixia.hexagonal.repository;
 
 import com.wixia.hexagonal.core.owner.Owner;
 import com.wixia.hexagonal.core.person.PersonId;

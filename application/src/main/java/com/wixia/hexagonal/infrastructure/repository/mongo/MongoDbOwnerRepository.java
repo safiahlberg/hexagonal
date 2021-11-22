@@ -1,8 +1,8 @@
-package com.wixia.hexagonal;
+package com.wixia.hexagonal.infrastructure.repository.mongo;
 
 import com.wixia.hexagonal.core.owner.Owner;
 import com.wixia.hexagonal.core.person.PersonId;
-import com.wixia.hexagonal.ports.OwnerRepository;
+import com.wixia.hexagonal.repository.OwnerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

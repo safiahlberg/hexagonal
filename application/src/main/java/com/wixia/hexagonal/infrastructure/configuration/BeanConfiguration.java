@@ -1,12 +1,14 @@
-package com.wixia.hexagonal;
+package com.wixia.hexagonal.infrastructure.configuration;
 
-import com.wixia.hexagonal.ports.DomainOwnerService;
-import com.wixia.hexagonal.ports.OwnerRepository;
-import com.wixia.hexagonal.ports.OwnerService;
+import com.wixia.hexagonal.service.DomainOwnerService;
+import com.wixia.hexagonal.repository.OwnerRepository;
+import com.wixia.hexagonal.service.OwnerService;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@ComponentScan
 public class BeanConfiguration {
 
     @Bean

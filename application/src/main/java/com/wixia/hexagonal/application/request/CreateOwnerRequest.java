@@ -1,4 +1,4 @@
-package com.wixia.hexagonal;
+package com.wixia.hexagonal.application.request;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
