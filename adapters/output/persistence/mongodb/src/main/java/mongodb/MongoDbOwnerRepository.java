@@ -27,4 +27,9 @@ public class MongoDbOwnerRepository implements OwnerRepository {
     public Optional<Owner> findByPersonId(PersonId personId) {
         return ownerRepository.findByPersonId(personId);
     }
+
+    @Override
+    public Iterable<Owner> findAll() {
+        return ownerRepository.findAll();
+    }
 }

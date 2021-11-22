@@ -13,7 +13,7 @@
   <packaging>jar</packaging>
 
   <properties>
-    <start-class>com.wixia.hexagonal.HexagonalApplication</start-class>
+    <start-class>HexagonalApplication</start-class>
   </properties>
 
   <artifactId>application</artifactId>
@@ -31,11 +31,13 @@
       <artifactId>rest</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
+    <!--
     <dependency>
       <groupId>com.wixia</groupId>
       <artifactId>mongodb</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
+    -->
 
     <dependency>
       <groupId>org.springframework.boot</groupId>

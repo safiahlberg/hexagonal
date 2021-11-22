@@ -11,4 +11,6 @@ public interface OwnerService {
     void removePet(PersonId ownerId, Pet pet);
 
     void saveOwner(Owner owner);
+
+    Iterable<Owner> getAllOwners();
 }

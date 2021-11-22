@@ -43,6 +43,11 @@ public class DomainOwnerService implements OwnerService {
         ownerRepository.save(owner);
     }
 
+    @Override
+    public Iterable<Owner> getAllOwners() {
+        return ownerRepository.findAll();
+    }
+
     private Owner getOwner(PersonId ownerId) {
         return ownerRepository.findByPersonId(ownerId).orElseThrow(
                 () -> new IllegalStateException("Owner not found"));

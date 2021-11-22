@@ -9,4 +9,6 @@ public interface OwnerRepository {
     void save(Owner owner);
 
     Optional<Owner> findByPersonId(PersonId personId);
+
+    Iterable<Owner> findAll();
 }
