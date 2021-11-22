@@ -19,7 +19,7 @@
   <packaging>jar</packaging>
 
   <properties>
-    <start-class>HexagonalApplication</start-class>
+    <start-class>com.wixia.hexagonal.HexagonalApplication</start-class>
   </properties>
 
   <dependencies>
