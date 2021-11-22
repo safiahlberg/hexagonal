@@ -1,9 +1,10 @@
-package com.wixia.hexagonal.ports;
+package com.wixia.hexagonal.service;
 
 import com.wixia.hexagonal.core.owner.ImmutableOwner;
 import com.wixia.hexagonal.core.owner.Owner;
 import com.wixia.hexagonal.core.owner.Pet;
 import com.wixia.hexagonal.core.person.PersonId;
+import com.wixia.hexagonal.repository.OwnerRepository;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -41,6 +42,11 @@ public class DomainOwnerService implements OwnerService {
     @Override
     public void saveOwner(Owner owner) {
         ownerRepository.save(owner);
+    }
+
+    @Override
+    public Iterable<Owner> getAllOwners() {
+        return ownerRepository.findAll();
     }
 
     private Owner getOwner(PersonId ownerId) {

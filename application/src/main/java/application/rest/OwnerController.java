@@ -1,13 +1,14 @@
-import com.wixia.hexagonal.ports.OwnerService;
+package com.wixia.hexagonal.application.rest;
+
+import com.wixia.hexagonal.application.request.CreateOwnerRequest;
+import com.wixia.hexagonal.core.owner.Owner;
+import com.wixia.hexagonal.service.OwnerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/owners")
+@RequestMapping(path = "/owners")
 public class OwnerController {
 
     private OwnerService ownerService;
@@ -21,5 +22,10 @@ public class OwnerController {
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public void createOwner(@RequestBody CreateOwnerRequest createOwnerRequest) {
         ownerService.saveOwner(createOwnerRequest.getOwner());
+    }
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<Owner> getAllOwners() {
+        return ownerService.getAllOwners();
     }
 }

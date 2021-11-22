@@ -1,8 +1,9 @@
-package com.wixia.hexagonal.ports;
+package com.wixia.hexagonal.service;
 
 import com.wixia.hexagonal.core.owner.*;
 import com.wixia.hexagonal.core.person.ImmutablePersonId;
 import com.wixia.hexagonal.core.person.PersonId;
+import com.wixia.hexagonal.repository.OwnerRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
