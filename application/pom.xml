@@ -2,6 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
   <parent>
    <groupId>com.wixia</groupId>
     <artifactId>hexagonal-parent</artifactId>
@@ -9,16 +11,16 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <modelVersion>4.0.0</modelVersion>
-  <packaging>jar</packaging>
-
-  <properties>
-    <start-class>HexagonalApplication</start-class>
-  </properties>
 
   <artifactId>application</artifactId>
 
   <description>Demo project for Spring Boot with Hexagonal architecture</description>
+
+  <packaging>jar</packaging>
+
+  <properties>
+    <start-class>com.wixia.hexagonal.HexagonalApplication</start-class>
+  </properties>
 
   <dependencies>
     <dependency>
@@ -31,13 +33,11 @@
       <artifactId>rest</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
-    <!--
     <dependency>
       <groupId>com.wixia</groupId>
       <artifactId>mongodb</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
-    -->
 
     <dependency>
       <groupId>org.springframework.boot</groupId>

@@ -1,3 +1,5 @@
+package com.wixia.hexagonal;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.wixia.hexagonal.core.owner.Owner;

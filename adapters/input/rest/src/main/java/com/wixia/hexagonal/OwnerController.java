@@ -1,3 +1,5 @@
+package com.wixia.hexagonal;
+
 import com.wixia.hexagonal.core.owner.Owner;
 import com.wixia.hexagonal.ports.OwnerService;
 import org.springframework.beans.factory.annotation.Autowired;
