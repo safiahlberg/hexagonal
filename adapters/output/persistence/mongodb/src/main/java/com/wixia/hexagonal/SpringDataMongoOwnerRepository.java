@@ -1,4 +1,4 @@
-package mongodb;
+package com.wixia.hexagonal;
 
 import com.wixia.hexagonal.core.owner.Owner;
 import com.wixia.hexagonal.core.person.PersonId;

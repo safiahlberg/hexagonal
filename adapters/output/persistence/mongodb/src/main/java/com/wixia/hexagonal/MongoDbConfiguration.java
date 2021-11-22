@@ -1,4 +1,4 @@
-package mongodb;
+package com.wixia.hexagonal;
 
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
