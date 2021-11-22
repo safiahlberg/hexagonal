@@ -13,7 +13,7 @@
   <packaging>jar</packaging>
 
   <properties>
-    <start-class>com.wixia.hexagonal.HexagonalApplication</start-class>
+    <start-class>HexagonalApplication</start-class>
   </properties>
 
   <artifactId>application</artifactId>
