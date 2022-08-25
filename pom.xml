@@ -29,8 +29,8 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <java.version>11</java.version> <!-- Overrides the version of Spring Boot Starter -->
-        <spring-boot.version>2.5.6</spring-boot.version>
-        <spring-core.version>5.3.12</spring-core.version>
+        <spring-boot.version>2.7.3</spring-boot.version>
+        <spring-core.version>5.3.22</spring-core.version>
     </properties>
 
     <dependencies>
